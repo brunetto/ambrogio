@@ -16,7 +16,7 @@ func main () {
 }
 
 func handler (resp http.ResponseWriter, req *http.Request) {
-	resp.Write([]byte("<script>window.close();</script>"))
+	resp.Write([]byte("<script>window.open('','_parent',''); window.close();</script>"))
 	script := `tell application "iTerm2"
     set newWindow to (create window with default profile)
         tell current session of newWindow
